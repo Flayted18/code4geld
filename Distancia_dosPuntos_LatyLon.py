@@ -1,5 +1,7 @@
-#LA FORMULA DE HAVERSINE
-#Calcular la distancia entre dos puntos
+"""LA FORMULA DE HAVERSINE.
+
+Calcular la distancia entre dos puntos
+"""
 import math
 #%%#Introduciendo las coordenadas y convirtiendolas de Grados decimales a Radianes
 #Punto inicial
