@@ -15,3 +15,15 @@ for file in filenames:
     axes1 = fig.add_subplot(1, 3, 1)
     axes1 = fig.add_subplot(1, 3, 2)
     axes1 = fig.add_subplot(1, 3, 3)
+    
+data = np.loadtxt(fname='inflammation-01.csv', delimiter=',')
+
+max_inflammation_0 = np.max(data, axis=0)[0]
+max_inflammation_20 = np.max(data, axis=0)[20]
+
+if max_inflammation_0 == 0 and max_inflammation_20 == 20:
+    print('Suspicious looking maxima!')
+elif np.sum(np.min(data, axis=0)) == 0:
+    print('Minima add up to zero!')
+else:
+    print('Seems OK!')
