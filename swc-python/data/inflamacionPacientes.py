@@ -84,5 +84,7 @@ months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", 
 sond = months[8:len(months)]
 print("Using len() to get last entry:", sond)
 
+print("Prueba del GitKraken!")
+print("Entendiendo la interfaz y probando los PUSH")
 
 
