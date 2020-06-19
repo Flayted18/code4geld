@@ -95,5 +95,20 @@ for char in sentence:
         count += 1
 
 print("El numero de Vocales en esta cadena es " + str(count))
+#%%#Funciones en Python
+temp = float(input("Ingrese la temperatura en grados Fahrenheit: "))
+def fahr_to_celsius(temp):
+    return ((temp - 32) * (5/9))
+print(fahr_to_celsius(temp))
+temp_c = float(input("Ingrese la temperatura en grados Celcius: "))
+def celsius_to_kelvin(temp_c):
+    return temp_c + 273.15
+
+def fahr_to_kelvin(temp_f): #Ejemplo de Funcion Compuesta
+    temp_c = fahr_to_celsius(temp_f)
+    temp_k = celsius_to_kelvin(temp_c)
+    return temp_k
+
+print('boiling point of water in Kelvin:', fahr_to_kelvin(212.0))
 
 

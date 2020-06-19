@@ -26,4 +26,4 @@ if max_inflammation_0 == 0 and max_inflammation_20 == 20:
 elif np.sum(np.min(data, axis=0)) == 0:
     print('Minima add up to zero!')
 else:
-    print('Seems OK!')
+    print('Seems OK!')j
