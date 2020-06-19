@@ -86,5 +86,14 @@ print("Using len() to get last entry:", sond)
 
 print("Prueba del GitKraken!")
 print("Entendiendo la interfaz y probando los PUSH")
+#%%#Detectando letras en Strings.
+vowels = 'aeiouAEIOU'
+sentence = 'Mary had a little lamb.'
+count = 0
+for char in sentence:
+    if char in vowels:
+        count += 1
+
+print("El numero de Vocales en esta cadena es " + str(count))
 
 
