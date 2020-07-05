@@ -65,18 +65,18 @@ def catalogar(lista, ruedas = None):
         if ruedas == v.ruedas:
             contador += 1
     print("Se han encontrado {} Vehiculos con {} ruedas \n".format(contador, ruedas))
-        
     for v in lista:
         if ruedas == None:
             print("{}. {}".format( type(v).__name__, v ))
         elif(ruedas == v.ruedas):
             print("{}. {}".format( type(v).__name__, v ))
+r = None
+r = int(input("Introduzca el numero de ruedas para su vehiculo: ")) # Cuando no introduzco ningun valor, da error con el int().
+print("---------------------------------------------") # Queda por resolver esto! No se que sucede con el None despues de convertir 
+if r == None:
+    catalogar(vehiculos)
+else:
+    catalogar(vehiculos, r)
 
-r = int(input("Introduzca el numero de ruedas para su vehiculo: "))
-print("---------------------------------------------")
-catalogar(vehiculos, r)
-
-
-
-
+    
 
