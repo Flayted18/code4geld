@@ -16,7 +16,7 @@ class Coche(Vehiculo):
         self.cilindrada = cilindrada
     
     def __str__(self):
-        return "El coche es de color {}, tiene {} ruedas, velocidad maxima de {} y {} cilindros".format(self.color, self.ruedas, self.velocidad, self.cilindrada)
+        return "El coche es de color {}, tiene {} ruedas, velocidad maxima de {} y {} cc.\n".format(self.color, self.ruedas, self.velocidad, self.cilindrada)
 
 # SubClase de Coche -> Camioneta
 class Camioneta(Coche):
@@ -25,7 +25,7 @@ class Camioneta(Coche):
         self.carga = carga
     
     def __str__(self):
-        return super().__str__() + ". Permite {} carga.".format(self.carga)
+        return super().__str__() + ". Permite {} carga. \n".format(self.carga)
     
 # SubClase de Vehiculo -> Bicicleta
 class Bicicleta(Vehiculo):
@@ -40,7 +40,7 @@ class Bicicleta(Vehiculo):
         #     print("El tipo es incorrecto")
         
     def __str__(self):
-        return "La bicicleta es de color {}, tiene {} ruedas y es de tipo {}".format(self.color, self.ruedas, self.tipo)
+        return "La bicicleta es de color {}, tiene {} ruedas y es de tipo {} \n".format(self.color, self.ruedas, self.tipo)
 
 # SubClase de Bicicleta -> Motocicleta
 class Motocicleta(Bicicleta):
@@ -50,20 +50,31 @@ class Motocicleta(Bicicleta):
         self.cilindrada = cilindrada
         
     def __str__(self):
-        return super().__str__() + "Alcanza una velocidad de {} y tiene {} cilindros.".format(self.velocidad, self.cilindrada)
+        return super().__str__() + "Alcanza una velocidad de {} y tiene {} cc.\n".format(self.velocidad, self.cilindrada)
 
 vehiculos = [
     Coche("Rojo", 4, "160 Km/h", 4),
-    Camioneta("Azul", 6, "180 Km/h", 8, "500 Kg"),
+    Camioneta("Azul", 4, "180 Km/h", 8, "500 Kg"),
     Bicicleta("Naranja", 2, "Urbana"),
     Motocicleta("Negro con franjas amarillas", 2, "Urbano", "220 Km/h", 2)
 ]
 
-def catalogar(lista):
+def catalogar(lista, ruedas = None):
+    contador = 0
     for v in lista:
-        print("{}. {}".format( type(v).__name__, v ))
+        if ruedas == v.ruedas:
+            contador += 1
+    print("Se han encontrado {} Vehiculos con {} ruedas \n".format(contador, ruedas))
         
-catalogar(vehiculos)
+    for v in lista:
+        if ruedas == None:
+            print("{}. {}".format( type(v).__name__, v ))
+        elif(ruedas == v.ruedas):
+            print("{}. {}".format( type(v).__name__, v ))
+
+r = int(input("Introduzca el numero de ruedas para su vehiculo: "))
+print("---------------------------------------------")
+catalogar(vehiculos, r)
 
 
 
